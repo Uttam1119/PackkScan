@@ -323,14 +323,7 @@ class ImageAnalysisService {
     if (!text) return '';
     
     let enhanced = text;
-    
-    // Fix common OCR mistakes
-    const replacements = {
-      '0': ['O', 'o'], // Sometimes O is read as 0
-      '1': ['I', 'l'], // Sometimes I or l is read as 1
-      '5': ['S', 's'], // Sometimes S is read as 5
-    };
-    
+  
     // Fix common ingredient words that are often misread
     const commonFixes = {
       'ingredlents': 'ingredients',
@@ -726,7 +719,6 @@ class ImageAnalysisService {
    */
   extractFoodLabelSections(text) {
     const sections = {};
-    const lowerText = text.toLowerCase();
     
     // Try to find ingredients section
     const ingredientsPatterns = [
