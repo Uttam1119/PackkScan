@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Navigation from './components/Navigation';
 import ModeSelector from './components/ModeSelector';
 import ImageUpload from './components/ImageUpload';
+import OcrProcessor from './components/OcrProcessor';
 
 
 const Scanner = () => {
