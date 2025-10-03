@@ -11,7 +11,11 @@ root.render(
     <BrowserRouter>
       <AuthProvider>
         
+             <UserPreferencesProvider>
+          <FoodHistoryProvider>
             <App />
+          </FoodHistoryProvider>
+        </UserPreferencesProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
