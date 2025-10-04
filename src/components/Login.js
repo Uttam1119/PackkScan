@@ -20,7 +20,7 @@ const Login = () => {
     <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center px-4">
       <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
         <div className="text-center mb-8">
-          <img src="/logo192.png" alt="PackScan Logo" className="h-20 w-20 mx-auto mb-4" />
+          <img src="/packScan.svg" alt="PackScan Logo" className="h-20 w-20 mx-auto mb-4" />
           <h1 className="text-3xl font-bold text-gray-800">PackScan</h1>
           <p className="text-gray-600 mt-2">Sign in to track your food journey</p>
         </div>
