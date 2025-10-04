@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('labelai_user');
+    const storedUser = localStorage.getItem('test_user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
@@ -23,15 +23,15 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (username, password) => {
-    if (username === 'hero' && password === 'labelai') {
+    if (username === 'test' && password === 'test-pass') {
       const userData = {
         id: 'user_001',
-        username: 'hero',
-        email: 'hero@labelai.com',
-        name: 'Hero User',
+        username: 'test',
+        email: 'test@packscan.com',
+        name: 'test User',
         createdAt: new Date().toISOString()
       };
-      localStorage.setItem('labelai_user', JSON.stringify(userData));
+      localStorage.setItem('test_user', JSON.stringify(userData));
       setUser(userData);
       return { success: true };
     }
@@ -39,9 +39,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem('labelai_user');
-    localStorage.removeItem('labelai_food_history');
-    localStorage.removeItem('labelai_user_preferences');
+    localStorage.removeItem('test_user');
+    localStorage.removeItem('test_food_history');
+    localStorage.removeItem('test_user_preferences');
     setUser(null);
   };
 

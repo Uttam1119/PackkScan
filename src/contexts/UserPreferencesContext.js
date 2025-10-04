@@ -61,7 +61,7 @@ export const UserPreferencesProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      const storedPreferences = localStorage.getItem(`labelai_preferences_${user.id}`);
+      const storedPreferences = localStorage.getItem(`packScan_preferences_${user.id}`);
       if (storedPreferences) {
         setPreferences(JSON.parse(storedPreferences));
       }
@@ -71,7 +71,7 @@ export const UserPreferencesProvider = ({ children }) => {
   const savePreferences = (newPreferences) => {
     if (user) {
       setPreferences(newPreferences);
-      localStorage.setItem(`labelai_preferences_${user.id}`, JSON.stringify(newPreferences));
+      localStorage.setItem(`packScan_preferences_${user.id}`, JSON.stringify(newPreferences));
     }
   };
 

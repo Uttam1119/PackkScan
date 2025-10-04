@@ -42,7 +42,7 @@ export const FoodHistoryProvider = ({ children }) => {
   const loadHistory = () => {
     if (!user) return;
     
-    const storedHistory = localStorage.getItem(`labelai_food_history_${user.id}`);
+    const storedHistory = localStorage.getItem(`packScan_food_history_${user.id}`);
     if (storedHistory) {
       const parsedHistory = JSON.parse(storedHistory);
       setHistory(parsedHistory);
@@ -53,7 +53,7 @@ export const FoodHistoryProvider = ({ children }) => {
   const saveHistory = (newHistory) => {
     if (!user) return;
     
-    localStorage.setItem(`labelai_food_history_${user.id}`, JSON.stringify(newHistory));
+    localStorage.setItem(`packScan_food_history_${user.id}`, JSON.stringify(newHistory));
     setHistory(newHistory);
     calculateStats(newHistory);
   };
