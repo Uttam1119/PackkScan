@@ -49,7 +49,7 @@ const Navigation = () => {
           {/* Logo and Brand */}
           <div className="flex items-center">
             <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-              <img src="/logo192.png" alt="PackScan" className="h-8 w-8 mr-2" />
+              <img src="/packScan.svg" alt="PackScan" className="h-8 w-8 mr-2" />
               <span className="text-xl font-bold text-gray-800">PackScan</span>
             </div>
 
