@@ -5,10 +5,14 @@ import { useAuth } from './contexts/AuthContext';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Navigation from './components/Navigation';
-import ModeSelector from './components/ModeSelector';
+import FoodHistory from './components/FoodHistory';
+import ProfileSettings from './components/ProfileSettings';
 import ImageUpload from './components/ImageUpload';
 import OcrProcessor from './components/OcrProcessor';
-
+import TextEditor from './components/TextEditor';
+import AIAnalyzer from './components/AIAnalyzer';
+import ResultsDisplay from './components/ResultsDisplay';
+import ModeSelector from './components/ModeSelector';
 
 const Scanner = () => {
   const [capturedImage, setCapturedImage] = useState(null);
@@ -182,7 +186,6 @@ const Scanner = () => {
   );
 };
 
-
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
   
@@ -202,8 +205,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/login" element={<Login /> } />
-
+      <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/" />} />
+      
       <Route path="/" element={
         <ProtectedRoute>
           <>
@@ -212,12 +215,30 @@ function App() {
           </>
         </ProtectedRoute>
       } />
-
+      
       <Route path="/scan" element={
         <ProtectedRoute>
           <>
             <Navigation />
             <Scanner />
+          </>
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/history" element={
+        <ProtectedRoute>
+          <>
+            <Navigation />
+            <FoodHistory onBack={() => window.history.back()} />
+          </>
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/profile" element={
+        <ProtectedRoute>
+          <>
+            <Navigation />
+            <ProfileSettings onBack={() => window.history.back()} />
           </>
         </ProtectedRoute>
       } />
